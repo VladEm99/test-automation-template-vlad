@@ -14,6 +14,7 @@ public class OrderDto {
     private String comment;
     int id;
 
+
     // static method to use factory
     public static OrderDto createRandomOrder() {
         Faker faker = new Faker();
