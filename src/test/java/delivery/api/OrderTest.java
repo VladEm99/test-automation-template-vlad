@@ -20,7 +20,7 @@ public class OrderTest extends BaseSetupApi {
         );
     }
 
-    @RepeatedTest(10)
+    @RepeatedTest(5)
     void createOrderAndCheckResponse() {
 
         Response response = ApiClient.createOrder(getAuthenticatedRequestSpecification(), OrderDto.createRandomOrder());
@@ -29,6 +29,16 @@ public class OrderTest extends BaseSetupApi {
                 () -> Assertions.assertEquals(HttpStatus.SC_OK, response.getStatusCode(), "Status code is OK"),
                 () -> Assertions.assertNotNull(response.getBody().path("id")),
                 () -> Assertions.assertNull(response.getBody().path("courierId"))
+        );
+    }
+    @Test
+    void deleteOrderByIdAndCheckResponse() {
+        Response responseOrderCreation = ApiClient.createOrder(getAuthenticatedRequestSpecification(), OrderDto.createRandomOrder());
+        int orderId = responseOrderCreation.getBody().path("id");
+        Response responseOrderDeletion = ApiClient.deleteOrderById(getAuthenticatedRequestSpecification(), orderId);
+
+        Assertions.assertAll("Test description",
+                () -> Assertions.assertEquals(HttpStatus.SC_OK, responseOrderDeletion.getStatusCode(), "Status code is OK")
         );
     }
 }

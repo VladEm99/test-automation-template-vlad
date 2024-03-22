@@ -39,6 +39,19 @@ public class ApiClient extends BaseSetupApi {
                 .extract()
                 .response();
     }
+    public static Response deleteOrderById(RequestSpecification spec, int orderId){
+
+        return given()
+                .spec(spec)
+                .log()
+                .all()
+                .delete( "orders/" + orderId)
+                .then()
+                .log()
+                .all()
+                .extract()
+                .response();
+    }
 
     public static String authorizeAndGetToken(String username, String password){
 
