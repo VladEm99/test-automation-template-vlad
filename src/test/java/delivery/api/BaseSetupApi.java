@@ -21,10 +21,12 @@ public class BaseSetupApi {
 
         configuration = new PropertiesConfiguration();
         configuration.load(PATH_TO_CONFIG);
+
         RestAssured.baseURI = configuration.getString("base-url");
-        String u = configuration.getString("username");
-        String p = configuration.getString("password");
-        bearerToken = ApiClient.authorizeAndGetToken(u, p);
+
+        String username = configuration.getString("username");
+        String password = configuration.getString("password");
+        bearerToken = ApiClient.authorizeAndGetToken(username, password);
     }
 
     public RequestSpecification getAuthenticatedRequestSpecification(){
