@@ -24,8 +24,11 @@ public class BaseSetupApi {
 
         RestAssured.baseURI = configuration.getString("base-url");
 
-        String username = configuration.getString("username");
-        String password = configuration.getString("password");
+//        String username = configuration.getString("username");
+//        String password = configuration.getString("password");
+        String username = System.getProperty("username");
+        String password = System.getProperty("password");
+
         bearerToken = ApiClient.authorizeAndGetToken(username, password);
     }
 
