@@ -23,12 +23,12 @@ public class OrderTest extends BaseSetupApi {
     @RepeatedTest(5)
     void createOrderAndCheckResponse() {
 
-        Response responseOrderCreation = ApiClient.createOrder(getAuthenticatedRequestSpecification(), OrderDto.createRandomOrder());
+        Response response = ApiClient.createOrder(getAuthenticatedRequestSpecification(), OrderDto.createRandomOrder());
 
         Assertions.assertAll("Test description",
-                () -> Assertions.assertEquals(HttpStatus.SC_OK, responseOrderCreation.getStatusCode(), "Status code is OK"),
-                () -> Assertions.assertNotNull(responseOrderCreation.getBody().path("id")),
-                () -> Assertions.assertNull(responseOrderCreation.getBody().path("courierId"))
+                () -> Assertions.assertEquals(HttpStatus.SC_OK, response.getStatusCode(), "Status code is OK"),
+                () -> Assertions.assertNotNull(response.getBody().path("id")),
+                () -> Assertions.assertNull(response.getBody().path("courierId"))
         );
     }
     @Test
