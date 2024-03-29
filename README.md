@@ -16,7 +16,9 @@ To run a specific test class using Maven, execute the following command in the t
 
 ```
 mvn clean test -Dtest=TestClassName
-
+```
+**Checklist for Tallinn Delivery web app UI**
+```
 | First Header  | Second Header | Third header  |
 | ------------- | ------------- | ------------- |
 | Content Cell  | Content Cell  |               |
