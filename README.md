@@ -51,6 +51,7 @@ mvn clean test -Dtest=TestClassName
 | 5  | Sign in button   	  | //*[@data-name="signIn-button"]  |
 ```
 **Xpaths for html document**
+
 [Document link](https://drive.google.com/file/d/15Zlqvx4sW5WhWymnXEa0eu3o7N7aDY1e/view)
 ```
 4.1 Выбрать все элементы <td>, содержащие имена (Name): //td//b[text()='Name']
