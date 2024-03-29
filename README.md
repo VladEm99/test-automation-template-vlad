@@ -50,4 +50,3 @@ mvn clean test -Dtest=TestClassName
 | 4  | RU localization button     | //button[text()='RU']            |
 | 5  | Sign in button   	      | //*[@data-name="signIn-button"]  |
 
-```
