@@ -51,9 +51,10 @@ mvn clean test -Dtest=TestClassName
 | 5  | Sign in button   	  | //*[@data-name="signIn-button"]  |
 ```
 **Xpaths for html document**
-```
+
 [Document link](https://drive.google.com/file/d/15Zlqvx4sW5WhWymnXEa0eu3o7N7aDY1e/view)
-4.1 Выбрать все элементы <td>, содержащие имена (Name): //td//b[text()='Name']
+```
+4.1 Выбрать все элементы <td>, содержащие имена (Name): //td[@class="td3"][not(contains(p, 'Name'))
 4.2 Выбрать все элементы <tr>, у которых атрибут data-qa начинается с "amount-": //tr[starts-with(@data-qa, 'amount-')]
 4.3 Выбрать все элементы <tr>, содержащие элемент <td> с текстом "John Doe": //tr//td//p//span[text()='John Doe']
 ```
