@@ -13,7 +13,7 @@ public class LoginPageTest {
 
     @Test
     public void insertIncorrectLoginAndPasswordAndCheckErrorMessage(){
-        Selenide.open("http://35.208.34.242:3000/signin");
+        Selenide.open("https://fe-delivery.tallinn-learning.ee/signin");
 
         //step 1
 //        SelenideElement usernameInput = $(By.xpath("//*[@data-name=\"username-input\"]"));
